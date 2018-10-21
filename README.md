@@ -6,7 +6,7 @@
 app.UseStaticFiles();
 app.UseFileServer(new FileServerOptions
 {
-    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyFile")),
+    FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "MyFile")),
     RequestPath = "/MyFile",
     //EnableDirectoryBrowsing = true
 });
